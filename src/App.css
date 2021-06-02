@@ -9,7 +9,12 @@
 .btn {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 5;
   /* padding: 3rem; */
   /* margin: 3rem; */
+}
+.hooks {
+  display: flex;
+  flex-direction: column;
 }

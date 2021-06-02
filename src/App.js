@@ -1,10 +1,10 @@
 import './App.css';
 import { Hooks } from './Components/Hooks';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
 
-  const [theme, setTheme] = useState(['']);
+  const [theme, setTheme] = useState(['gold']);
 
   const lightTheme = () => setTheme('light');
   const darkTheme = () => setTheme('dark');
@@ -27,8 +27,10 @@ function App() {
       text = palette.light;
       break;
     default:
-      bg = 'green'
+      bg = theme
   }
+
+  useEffect(() => { document.title = theme }, [theme])
 
   return (
     <div className='App' style={{ background: `${bg}`, color: `${text}` }} >
@@ -36,6 +38,7 @@ function App() {
       <div className="btn">
         <button onClick={lightTheme} > light 🌞 </button>
         <button onClick={darkTheme} > dark 🌙 </button>
+        <button onClick={() => setTheme('gold')} > reset ✨ </button>
       </div>
       <Hooks max={10} />
 
