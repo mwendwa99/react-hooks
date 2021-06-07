@@ -5,11 +5,12 @@ import React, { useState, useEffect } from 'react';
 export const Hooks = ({ max }) => {
 
     const [count, setCount] = useState(0);
+
     const [num, setNum] = useState(0)
+    const randomNum = () => setNum(Math.floor(Math.random() * (9999 - 1000 + 1) + 1000));
 
     const countUp = () => setCount(count + 1);
     const countDown = () => setCount(count - 1);
-    const randomNum = () => setNum(Math.floor(Math.random() * (9999 - 1000 + 1) + 1000));
 
     const upperLimit = max
 
@@ -21,18 +22,34 @@ export const Hooks = ({ max }) => {
     }
 
     return (
-        <div className='hooks'>
+        <div className='hook'>
+            {/* <div> */}
             <div>
-                <h1> level: {count} </h1>
-                <div className="btn">
-                    <button onClick={countUp} >Count Up</button>
-                    <button onClick={countDown} >Count Down</button>
-                </div>
+                <h1> Counter: {count} </h1>
+                <h1>passcode <br /> generator: {num} </h1>
             </div>
-            <div>
-                <h1>passcode generator: {num} </h1>
+            <div className="btn">
+                <button onClick={countUp} >Count Up</button>
+                <button onClick={countDown} >Count Down</button>
                 <button onClick={randomNum} >generate</button>
             </div>
+            {/* </div> */}
+
         </div>
     );
 }
+
+// export const PasscodeGenerator = () => {
+
+
+
+
+//     return (
+//         <div className='hook' >
+
+//             <div>
+
+//             </div>
+//         </div>
+//     )
+// }

@@ -1,6 +1,7 @@
 import './App.css';
 import { Hooks } from './Components/Hooks';
 import { useState, useEffect } from 'react'
+import Animations from './Components/Animations';
 
 function App() {
 
@@ -34,13 +35,18 @@ function App() {
 
   return (
     <div className='App' style={{ background: `${bg}`, color: `${text}` }} >
-      <h2>Current theme: {theme} </h2>
-      <div className="btn">
-        <button onClick={lightTheme} > light 🌞 </button>
-        <button onClick={darkTheme} > dark 🌙 </button>
-        <button onClick={() => setTheme('gold')} > reset ✨ </button>
+      <div className='title' >
+        <h2>Current theme: {theme} </h2>
+        <div className="btn">
+          <button onClick={lightTheme} > light 🌞 </button>
+          <button onClick={darkTheme} > dark 🌙 </button>
+          <button onClick={() => setTheme('gold')} > reset ✨ </button>
+        </div>
       </div>
-      <Hooks max={10} />
+      <div className='sections' >
+        <Hooks max={10} />
+        <Animations />
+      </div>
 
     </div>
   );
