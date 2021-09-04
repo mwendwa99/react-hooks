@@ -51,17 +51,20 @@
   /* background-color: white; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 @keyframes spinner {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 #starImg {
-  animation: spinner 0.5s;
+  animation: spinner 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

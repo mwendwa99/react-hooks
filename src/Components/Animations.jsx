@@ -11,7 +11,7 @@ const Animations = () => {
     return (
         <div className='anim' >
             <div id="star" >
-                <img id='starImg' src={Images.feedback} alt="" />
+                <img id='starImg' width='180' height='180' src={Images.feedback} alt="" />
             </div>
             <div>
                 <button id='spin' onClick={playPause} >play/pause</button>
